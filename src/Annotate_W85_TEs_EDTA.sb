@@ -26,4 +26,4 @@ conda activate EDTA  # activate the conda environment of packages
 cd $OUT_DATA_DIR  # cd to output data dir for any extraneous files that get outputted
 
 # Run EDTA
-perl $EDTA_DIR/EDTA.pl --genome $GENOME_DIR/Vce1.0.fasta --cds $GENOME_DIR/vcae1.4.cds.fa --sensitive 1 --anno 1 --threads 20
+perl $EDTA_DIR/EDTA.pl --genome $GENOME_DIR/Vce1.0.fasta --cds $GENOME_DIR/vcae1.4.cds.fa --sensitive 1 --anno 1 --threads 20 --evaluate 1
