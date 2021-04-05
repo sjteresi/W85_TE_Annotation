@@ -6,3 +6,11 @@ I prefer to use [EDTA](https://github.com/oushujun/EDTA) by Shujun Ou to generat
 
 # Usage:
 Scripts can be be found in the `src/` directory.
+
+# Output Data:
+I have not uploaded the output data to GitHub due to the nature of GitHub and the file sizes. However should you run this code it will output data to `results/EDTA_Annotation`.
+Principal outputs are `results/EDTA_Annotation/Vce1.0.fasta.mod.EDTA.TEanno.gff3` and `results/EDTA_Annotation/Vce1.0.fasta.mod.EDTA.TEanno.sum`; the former is the whole-genome annotation and the latter is a summary file describing the relative portions of TEs.
+
+For a quick perusal of the annotation, the TE type can be easily gleaned from the third column, e.g `Gypsy_LTR_retotransposon`. However for a more complete representation of the TE type, look to the last column which uses a naming scheme similar to the one proposed in [Wicker 2007](https://www.nature.com/articles/nrg2165).
+
+The most salient portion of the annotation file is contained within a substring of the last column between the strings `;Classification=` and `;`, e.g: `;Classification=LTR/Gypsy;`, where the entries are placed in TE Order and TE Superfamily notation separated by the `/` string. In the case where the TE's Order was unable to be determined, there is no `/` substring and the entry will just be `;Classification=Unknown;`. Take care when parsing the strings to distinguish the unknown superfamilies of an LTR element vs a LINE element, as they both have `unknown` for the superfamily value and if you are grouping these it may lead to incorrect interpretation if unaware.
