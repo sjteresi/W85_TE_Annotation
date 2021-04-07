@@ -1,11 +1,8 @@
 # W85 Annotation
-This repository stores all of my work relating to the TE annotation of W85, a diploid blueberry genome.
+This repository stores all of my work relating to the TE annotation of W85, a diploid blueberry genome. The complete [EDTA](https://github.com/oushujun/EDTA) pipeline was run wtih a provided CDS FASTA file using the `--cds` flag and used RepeatModeler to identify remaining TEs using the `--sensitive 1` option; default options were used for stages other than generating a whole-genome annotation with the `--anno 1` flag. The script for running EDTA can be located at `src/Annotate_W85_TEs_EDTA.sb`.
 
 # Installation:
 I prefer to use [EDTA](https://github.com/oushujun/EDTA) by Shujun Ou to generate my TE annotations. EDTA installation directions can be found there.
-
-# Usage:
-Scripts can be be found in the `src/` directory.
 
 # Output Data:
 I have not uploaded the output data to GitHub due to the nature of GitHub and the file sizes. However should you run this code it will output data to `results/EDTA_Annotation`.
