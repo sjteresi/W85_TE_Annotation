@@ -3,7 +3,7 @@
 #SBATCH -J EDTA_W85
 #SBATCH --time=167:00:00
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=30
+#SBATCH --cpus-per-task=20
 #SBATCH --mem-per-cpu=16G
 #SBATCH -o EDTA_W85.out
 #--------------------------------------------------------
@@ -21,9 +21,10 @@ OUT_DATA_DIR=/mnt/research/edgerpat_lab/Scotty/W85_TE_Annotation/results/EDTA_An
 
 module purge
 module load Conda/3
-conda activate EDTA  # activate the conda environment of packages
+conda activate EDTA  # activate the conda environment of packages, managed by EDTA
 
+mkdir -p $OUT_DATA_DIR
 cd $OUT_DATA_DIR  # cd to output data dir for any extraneous files that get outputted
 
 # Run EDTA
-perl $EDTA_DIR/EDTA.pl --genome $GENOME_DIR/Vce1.0.fasta --cds $GENOME_DIR/vcae1.4.cds.fa --sensitive 1 --anno 1 --threads 20 --evaluate 1
+perl $EDTA_DIR/EDTA.pl --genome $GENOME_DIR/Vce1.0.fasta --cds $GENOME_DIR/vcae1.4.cds.fa --sensitive 1 --anno 1 --threads 20

@@ -23,7 +23,9 @@ module purge
 module load Conda/3
 conda activate EDTA  # activate the conda environment of packages
 
+mkdir -p $OUT_DATA_DIR
 cd $OUT_DATA_DIR  # cd to output data dir for any extraneous files that get outputted
 
 # Run EDTA
+# Only running it to get the supplemental confusion matrix files
 perl $EDTA_DIR/EDTA.pl --genome $GENOME_DIR/Vce1.0.fasta --cds $GENOME_DIR/vcae1.4.cds.fa --step anno --anno 1 --threads 30 --evaluate 1
